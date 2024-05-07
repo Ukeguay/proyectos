@@ -1,0 +1,33 @@
+
+01. Creamos el main y configuramos SpringBootApplication
+
+02. Creamos un YAML (aplication.yml) para configurar SpringBootApplication
+
+03. Creamos Rest endpoints para que el usuario pueda acceder a los metodos del main,
+    usando las anotaciones @RestController y @GetMapping("/ruta")
+
+04. Ejecutamos un Docker Compose (YAML) para gestionar la base de datos (PostgreSQL)
+
+05. Resolvemos las dependencias para los conectores a la base de datos, en concreto,
+    los artefactos postgresql y spring-boot-starter-data-jpa
+
+06. Configuramos el Datasource en el archivo de propiedades o YAML (aplication.yml)
+    para conectar con la base de datos
+
+07. Creamos la base de datos desde el terminal:
+
+    - docker ps (process status: muestra los procesos en ejecucion)
+    - docker exec -it nombre_contenedor bash (para iniciar un shell dentro del contenedor)
+    - psql -U nombre_usuario (para interactuar con la base de datos)
+      Ejemplos: \l para listar todas las bases de datos disponibles en el servidor PostgreSQL;
+                CREATE DATABASE nombre_tabla para crear base de datos; etc.
+
+08. Creamos el modelo (Nombre_Tabla) que representa la entidad en la base de datos (JPA, persistencia)
+
+09. Conectamos el modelo con la tabla ejecutando dentro del shell de postgres
+    el comando \c nombre_tabla (previamente creada en el punto 7)
+
+10. Creamos una interfaz y extendemos JpaRepository para que el usuario pueda
+    realizar operaciones de persistencia utilizando JPA
+
+11. Creamos la API en el main (@Mapping) e inyectamos el repositorio

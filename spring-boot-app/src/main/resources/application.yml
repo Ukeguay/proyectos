@@ -1,0 +1,24 @@
+# Archivo de configuración YAML o propiedades
+server:
+  port: 8080
+
+spring:
+
+  # Conector de PostgreSQL
+  datasource:
+    url: jdbc:postgresql://localhost:5332/usuario
+    username: jose
+    password: josejose
+
+  # Conector de JPA
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # Hibernate creara tablas al inicio y las eliminara al finalizar la aplicacion;
+    properties:             # util para pruebas o desarrollo, pero no en entornos de produccion
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  main:
+    web-application-type: servlet
