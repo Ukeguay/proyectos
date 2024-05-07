@@ -21,23 +21,23 @@ public class Usuario {
     )
     private Integer id;
     private String nombre;
-    private String password;
+    private String email;
 
-    public Usuario(Integer id, String nombre, String password) {
+    public Usuario(Integer id, String nombre, String email) {
         this.id = id;
         this.nombre = nombre;
-        this.password = password;
+        this.email = email;
     }
 
     public Usuario() {
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNombre() {
@@ -61,12 +61,12 @@ public class Usuario {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id) && Objects.equals(nombre, usuario.nombre) && Objects.equals(password, usuario.password);
+        return Objects.equals(id, usuario.id) && Objects.equals(nombre, usuario.nombre) && Objects.equals(email, usuario.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, password);
+        return Objects.hash(id, nombre, email);
     }
 
     @Override
@@ -74,7 +74,7 @@ public class Usuario {
         return "Usuario{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }

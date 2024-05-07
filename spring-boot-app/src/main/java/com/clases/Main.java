@@ -29,7 +29,7 @@ public class Main {
         return repositorioUsuario.findAll();
     }
 
-    record RequestUsuario(String nombre, String password) {
+    record RequestUsuario(String nombre, String email) {
 
     }
 
@@ -39,7 +39,7 @@ public class Main {
 
         Usuario nuevoUsuario = new Usuario();
         nuevoUsuario.setNombre(request.nombre);
-        nuevoUsuario.setPassword(request.password);
+        nuevoUsuario.setEmail(request.email);
         repositorioUsuario.save(nuevoUsuario);
 
     }
@@ -57,7 +57,7 @@ public class Main {
         if (usuarioOptional.isPresent()) {
             Usuario usuario = usuarioOptional.get();
             usuario.setNombre(request.nombre);
-            usuario.setPassword(request.password);
+            usuario.setEmail(request.email);
             repositorioUsuario.save(usuario);
         } else {
             throw new IllegalArgumentException("El usuario con ID " + id + " no existe");
