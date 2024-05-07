@@ -6,7 +6,7 @@ spring:
 
   # Conector de PostgreSQL
   datasource:
-    url: jdbc:postgresql://localhost:5332/usuario
+    url: jdbc:postgresql://localhost:5332/aloha
     username: jose
     password: josejose
 
