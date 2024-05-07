@@ -1,4 +1,4 @@
-package com.clases;
+package taskmanager.model;
 
 import jakarta.persistence.*;
 
